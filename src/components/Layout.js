@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "./logo.svg";
 
 function Layout({ children }) {
   const location = useLocation();
@@ -16,16 +17,17 @@ function Layout({ children }) {
       <div className="pb-44">{children}</div>
 
       {/* footer */}
-      <div className="fixed top-10 left-0 right-0">
-        <div className="flex w-full justify-center bg-primary items-center">
+      <div className="fixed top-0 left-0 right-0">
+        <div className="flex w-full h-16 justify-center items-center bg-black">
+          <img src={logo} className="px-10 mr-10" />
           {menuItems.map((item) => (
             <div className="flex flex-col items-center">
-              <div className="px-20 text-white py-5">
+              <div className="px-20 text-white text-md py-2">
                 <Link to={`${item.path}`}> {item.title} </Link>
               </div>
               {location.pathname === item.path && (
                 <div className="bg-white">
-                  <div className="h-1 w-10"></div>
+                  <div className="h-1 w-20"></div>
                 </div>
               )}
             </div>

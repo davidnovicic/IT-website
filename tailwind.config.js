@@ -7,6 +7,9 @@ module.exports = {
         primary: "#322F2C",
         secondary: "#",
       },
+      backgroundImage: {
+        bannerImg: "",
+      },
     },
   },
   plugins: [],

@@ -59,7 +59,7 @@ function WhatWeDo() {
         <Slider {...settings}>
           {offers.map((item, index) => {
             return (
-              <div className=" bg-gray-300 h-[430px] rounded-lg">
+              <div className=" bg-gray-300 h-[430px] rounded-lg hover:bg-blue-200">
                 <div key={index} className="">
                   <img
                     src={item.icon}

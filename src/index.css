@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.about-intro {
+  background-color: gray;
+  background-image: linear-gradient(315deg, gray 74%);
+  overflow-x: hidden !important;
+}
+
 .slick-slide > div {
   margin: 0 10px;
 }
@@ -11,4 +17,8 @@
 }
 .slick-arrow.slick-next {
   background: black !important;
+}
+
+.img1 {
+  filter: brightness(0.2);
 }
