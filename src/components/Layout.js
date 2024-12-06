@@ -18,7 +18,7 @@ function Layout({ children }) {
 
       {/* footer */}
       <div className="fixed top-0 left-0 right-0">
-        <div className="flex w-full h-16 justify-center items-center bg-black">
+        <div className="flex w-full h-16 justify-center items-center bg-secondary">
           <img src={logo} className="px-10 mr-10" />
           {menuItems.map((item) => (
             <div className="flex flex-col items-center">
@@ -33,8 +33,8 @@ function Layout({ children }) {
             </div>
           ))}
           <div className="rounded-lg pl-20">
-            <button className="px-10 py-2 text-xl bg-red-500 text-white rounded-lg hover:bg-red-600">
-              Let's talk
+            <button className="px-10 py-2 h-10 text-md align-text-top hover:align-top bg-red-500 text-white rounded-lg hover:bg-red-600">
+              Lets talk
             </button>
           </div>
         </div>

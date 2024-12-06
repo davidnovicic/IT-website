@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContactForm() {
   return (
-    <div className="mt-20 bg-blue-100">
+    <div className=" bg-blue-100">
       <div className="border">
         <form className="mt-20">
           <div className="">

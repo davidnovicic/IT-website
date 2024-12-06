@@ -29,7 +29,7 @@ function Intro() {
           <a className="text-white"> Speak with us about managed IT services</a>
         </div>
         <div className="flex justify-center mt-28">
-          <img src={CompanyName} className="absolute w-[150px]" />
+          <img src={CompanyName} className="absolute w-[150px] " />
         </div>
       </div>
       <div className="mt-40 ml-80 flex justify-between items-center">
@@ -88,7 +88,7 @@ function Intro() {
       <div className="h-[700px] relative mt-40">
         <img
           src={Techgirl}
-          className="img1 w-full h-full object-cover mix-blend-overlay absolute"
+          className="img1 w-full h-full object-cover absolute mix-blend-overlay"
         />
         <div className="p-40">
           <h1 className="text-white text-2xl mt-10 "> MANAGED SERVICES </h1>

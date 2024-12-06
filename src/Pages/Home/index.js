@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 function Home() {
   return (
     <Layout>
-      <Intro />
       <WhatWeDo />
     </Layout>
   );

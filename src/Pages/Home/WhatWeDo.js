@@ -1,13 +1,23 @@
-import React, { useState } from "react";
-import Slider from "react-slick";
+import React, { useEffect, useRef, useState } from "react";
+import MySlider from "./MySlider";
+import Slider from "./Slider";
+import ServerRoom2 from "./serverroom1.avif";
 
 function WhatWeDo() {
-  let settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 1,
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const timerRef = useRef(null);
+
+  const slides = [
+    { url: "images/strangeobject.avif", title: "Strangeobject" },
+    { url: "images/office.avif", title: "Office" },
+    { url: "images/security.avif", title: "Security" },
+    { url: "images/serverroom123.avif", title: "Serverroom123" },
+  ];
+
+  const containerStyles = {
+    width: "1200px",
+    height: "1200px",
+    margin: "0 auto",
   };
 
   const offers = [
@@ -53,32 +63,66 @@ function WhatWeDo() {
     },
   ];
 
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+    clearTime(timerRef);
+  };
+
+  const goToNext = () => {
+    const isLastSlide = currentIndex !== slides.length - 1;
+    const newIndex = isLastSlide ? currentIndex + 1 : 0;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+
+  const clearTime = () => {
+    clearTimeout(timerRef.current);
+  };
+
+  useEffect(() => {
+    console.log("bla");
+    timerRef.current = setTimeout(() => {
+      goToNext();
+    }, 3000);
+
+    return () => clearTimeout(timerRef.current);
+  });
+
   return (
-    <div className="h-screen pt-80">
-      <div className="w-3/4 m-auto">
-        <Slider {...settings}>
-          {offers.map((item, index) => {
-            return (
-              <div className=" bg-gray-300 h-[430px] rounded-lg hover:bg-blue-200">
-                <div key={index} className="">
-                  <img
-                    src={item.icon}
-                    className="w-32 h-32 object-contain block mt-10 m-auto"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <p className="fond-semibold text-xl mt-10">{item.name}</p>
-                </div>
-                <div>
-                  <p className="text-md mt-10">{item.description}</p>
-                </div>
-              </div>
-            );
-          })}
-        </Slider>
+    <div>
+      <div className="h-[700px] relative">
+        <img
+          src={ServerRoom2}
+          className="img1 absolute w-full h-full mix-blend-overlay object-cover"
+        />
+        <div className="p-24">
+          <p className="text-6xl mt-32 text-white">
+            Business IT and Security Services
+          </p>
+          <p className="text-white text-xl mt-20 text-center w-[950px] ml-[240px]">
+            Today, businesses need agility, mobility, and efficiency like never
+            before. It time for a different kind of IT service provider—one that
+            will meet your business where it is now and take you anywhere you
+            want to go.
+          </p>
+          <button className="bg-red-500 h-10 w-60 text-white text-xl mt-28 rounded-md mb-20">
+            Explore Options
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <div className="mt-[50px] p-20">
+          <Slider />
+        </div>
       </div>
     </div>
   );
 }
+
 export default WhatWeDo;

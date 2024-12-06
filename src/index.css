@@ -8,17 +8,40 @@
   overflow-x: hidden !important;
 }
 
-.slick-slide > div {
-  margin: 0 10px;
-}
-
-.slick-arrow.slick-prev {
-  background: black !important;
-}
-.slick-arrow.slick-next {
-  background: black !important;
-}
-
 .img1 {
   filter: brightness(0.2);
+}
+
+.slick-prev:before {
+  /* background-color: blue !important; */
+  width: 46px;
+  height: 46px;
+  content: "" !important;
+  position: absolute;
+  top: -11px;
+  left: -31px;
+  background-image: url("./arrow-left.png");
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  background-size: 46px;
+  opacity: 1 !important;
+}
+
+.slick-next:before {
+  /* background-color: blue !important; */
+  width: 46px;
+  height: 46px;
+  content: "" !important;
+  position: absolute;
+  top: -11px;
+  right: -31px;
+  background-image: url("./arrow-right.png");
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  background-size: 46px;
+  opacity: 1 !important;
+}
+
+.slick-slide {
+  padding: 0 15px;
 }
